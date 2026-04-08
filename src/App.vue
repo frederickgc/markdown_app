@@ -21,8 +21,9 @@ const toolbar = {
           },
         ],
       });
-
-      text.value = await invoke("read_file", { path: file.value });
+      if (file.value) {
+        text.value = await invoke("read_file", { path: file.value });
+      }
     },
   },
 };
